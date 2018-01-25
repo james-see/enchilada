@@ -35,13 +35,7 @@ else
     firstrun=1
 fi
 # check for homebrew installation and exit if not installed
-echo "[-*-] checking if Homebrew is installed on OSX...";
-if which brew > /dev/null 2>&1; then
-    echo "Homebrew installed! Moving on"
-else
-    echo "Homebrew not installed, shame on you. Go to https://brew.sh and follow the instructions and run this again."
-    exit 1
-fi
+/bin/bash check_homebrew.sh
 
 echo "[-*-] checking if blueutil installed via homebrew and installing if not...";
 if brew ls --versions blueutil > /dev/null; then
